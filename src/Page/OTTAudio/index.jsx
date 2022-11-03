@@ -513,7 +513,7 @@ const OTTAudio = () => {
 
   return (
     <form 
-      className='main__form' 
+      className='main__form audio' 
       onSubmit={e => {
         e.preventDefault()
         console.log(data)
@@ -541,7 +541,7 @@ const OTTAudio = () => {
                 input.type === 'file' ? (
                   <React.Fragment key={input.id}>
                     <div className='input__controle input__file__controle'>
-                      <label htmlFor={input.id}>{input.placeholder}:</label>
+                      {/* <label htmlFor={input.id}>{input.placeholder}:</label> */}
                       <label className='add__button' htmlFor={input.id}><BsFillCloudUploadFill />Upload file</label>
                       <input 
                         id={input.id}
@@ -549,16 +549,16 @@ const OTTAudio = () => {
                         required
                         onChange={addFileHandler}
                         />
+                      {input.id === 'track__file' && <div className='file__result'>
+                        {audio ? <audio controls src={audio} /> : <p>No File!</p>}
+                      </div>}
+                      {input.id === 'image__file' && <div className='file__result'>
+                        {image ? <img className='poster__image' alt='' src={image} /> : <p>No File!</p>}
+                      </div>}
+                      {input.id === 'video__file' && <div className='file__result'>
+                        {video ? <video controls className='poster__image' alt='' src={video} /> : <p>No File!</p>}
+                      </div>}
                     </div>
-                    {input.id === 'track__file' && <div className='file__result'>
-                      {audio ? <audio controls src={audio} /> : <p>No File!</p>}
-                    </div>}
-                    {input.id === 'image__file' && <div className='file__result'>
-                      {image ? <img className='poster__image' alt='' src={image} /> : <p>No File!</p>}
-                    </div>}
-                    {input.id === 'video__file' && <div className='file__result'>
-                      {video ? <video className='poster__image' alt='' src={video} /> : <p>No File!</p>}
-                    </div>}
                   </React.Fragment>
                 )
                 : (

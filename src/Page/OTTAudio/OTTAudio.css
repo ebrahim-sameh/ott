@@ -22,9 +22,14 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
+.main__form.audio .main__box:nth-of-type(5) .input__group,
+.main__form.audio .main__box:nth-of-type(3) .input__group,
+.main__form.audio .main__box:nth-of-type(1) .input__group {
+  display: block;
+}
 .checkbox__inputs__group {
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 20px;
+  gap: 40px 20px;
 }
 .input__controle {
   display: flex;
@@ -32,30 +37,34 @@
   row-gap: 6px;
 }
 .input__controle.input__file__controle {
-  flex-direction: row;
-  column-gap: 24px;
+  /* flex-direction: row; */
+  column-gap: 40px;
   align-items: center;
+  justify-content: center;
 }
 .input__controle input {
   background-color: #FFF;
   padding: 10px 12px;
   border: none;
   outline: none;
+  font-size: 18px;
 }
 .input__controle input[type='file'] {
   display: none;
 }
 .input__controle label {
-  font-size: 18px;
+  font-size: 20px;
 }
 .file__result {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  width: 100%;
 }
 .file__result p {
   font-size: 25px;
   font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 .file__result audio {
   width: 100%;
@@ -73,11 +82,12 @@
   justify-content: center;
   width: 250px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 .poster__image {
   height: 200px;
   display: block;
-  margin: 0 0 0 auto;
+  margin: 0 auto;
   cursor: pointer;
 }
 .input__controle select {
@@ -85,6 +95,7 @@
   padding: 10px 12px;
   border: none;
   outline: none;
+  font-size: 18px;
 }
 .submit__btn {
   display: block;
@@ -95,6 +106,10 @@
   padding: 10px 20px;
   font-size: 24px;
 }
+.checkbox__inputs__group .checkbox {
+  display: flex;
+  flex-direction: column;
+}
 .checkbox__inputs__group .checkbox label {
   display: flex;
   flex-direction: column;
@@ -102,15 +117,24 @@
   font-size: 12px;
   text-align: center; 
   cursor: pointer;
-  white-space: pre;
   margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 4px;
+  flex: 1;
+  justify-content: center;
 }
 .checkbox__inputs__group .checkbox img {
   width: 40px;
   margin-bottom: 8px;
   display: block;
+  pointer-events: none;
 }
 .checkbox__inputs__group .checkbox input {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 .checkbox__inputs__group input[type='checkbox'] {

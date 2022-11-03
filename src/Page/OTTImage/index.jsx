@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsFillCloudUploadFill } from 'react-icons/bs'
 import Card from '../../Components/Card'
+import { AiFillDelete } from 'react-icons/ai'
 
 import './OTTImage.css'
 
@@ -16,16 +17,28 @@ const OTTImage = () => {
     let reader = new FileReader();
 
     reader.onload = e => {
-      setData({...data, images: [...data.images, e.target.result]})
+      setData({...data, images: [...data.images, {
+        id: Math.random(),
+        src: e.target.result
+      }]})
     };
     reader.readAsDataURL(files[0]);
+  };
+
+  const deleteImage = (id) => {
+    const updateImages = data.images.filter(img => img.id !== id);
+    setData({...data, images: updateImages})
+    console.log(updateImages)
   }
 
   return (
     <div className='ott__image__page'>
       <div className="images">
         {data.images.map((img, i) => (
-          <img key={i} src={img} alt="" />
+          <div key={i} className='image__card'>
+            <img src={img.src} alt="" />
+            <button onClick={() => deleteImage(img.id)}><AiFillDelete /></button>
+          </div>
         ))}
       </div>
       <form 
@@ -47,7 +60,12 @@ const OTTImage = () => {
               />
             </div>
             <div className='input__controle input__file__controle'>
-              <label className='add__button' htmlFor='image__file'><BsFillCloudUploadFill />Upload image</label>
+              <label 
+                className='add__button' 
+                htmlFor='image__file'
+              >
+                <BsFillCloudUploadFill />Upload image
+              </label>
               <input 
                 id='image__file'
                 type='file'
