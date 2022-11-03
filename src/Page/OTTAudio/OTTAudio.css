@@ -1,0 +1,86 @@
+.main__form {
+  padding: 0 40px 40px;
+}
+.main__box:not(:last-of-type) {
+  margin-bottom: 80px;
+}
+.main__box:last-of-type {
+  margin-bottom: 40px;
+}
+.main__box .box__title {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+.main__box .input__group {
+  /* padding: 0px 20px 20px; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.main__box .input__controle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+.main__box .input__controle.input__file__controle {
+  flex-direction: row;
+  column-gap: 24px;
+  align-items: center;
+}
+.main__box .input__controle input {
+  background-color: #FFF;
+  padding: 10px 12px;
+}
+.main__box .input__controle input[type='file'] {
+  display: none;
+}
+.main__box .input__controle label {
+  font-size: 18px;
+}
+.file__result {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.file__result p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.file__result audio {
+  width: 100%;
+}
+.input__controle .add__button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #FFF;
+  background-color: #000;
+  column-gap: 12px;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  width: 250px;
+  margin: 0 auto;
+}
+.poster__image {
+  height: 200px;
+  display: block;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}
+.main__box .input__controle select {
+  background-color: #FFF;
+  padding: 10px 12px;
+  border: none;
+  outline: none;
+}
+.submit__btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #003AAB;
+  color: #FFF;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 24px;
+}
