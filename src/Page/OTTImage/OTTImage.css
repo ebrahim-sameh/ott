@@ -1,0 +1,14 @@
+.ott__image__page .images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+  margin-bottom: 40px;
+}
+.ott__image__page .images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.ott__image__page .submit__btn {
+  margin-top: 40px;
+}

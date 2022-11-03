@@ -1,5 +1,5 @@
 .main__form {
-  padding: 0 40px 40px;
+  padding-bottom: 40px;
 }
 .main__box:not(:last-of-type) {
   margin-bottom: 80px;
@@ -7,34 +7,45 @@
 .main__box:last-of-type {
   margin-bottom: 40px;
 }
-.main__box .box__title {
-  margin-bottom: 10px;
-  font-size: 28px;
+.box__title {
+  margin-bottom: 40px;
+  font-size: 32px;
+  background-color: #003AAB;
+  color: #FFF;
+  padding: 14px;
+  text-align: center;
+  border-radius: 4px;
 }
-.main__box .input__group {
-  /* padding: 0px 20px 20px; */
+.checkbox__inputs__group,
+.input__group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
-.main__box .input__controle {
+.checkbox__inputs__group {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+}
+.input__controle {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
 }
-.main__box .input__controle.input__file__controle {
+.input__controle.input__file__controle {
   flex-direction: row;
   column-gap: 24px;
   align-items: center;
 }
-.main__box .input__controle input {
+.input__controle input {
   background-color: #FFF;
   padding: 10px 12px;
+  border: none;
+  outline: none;
 }
-.main__box .input__controle input[type='file'] {
+.input__controle input[type='file'] {
   display: none;
 }
-.main__box .input__controle label {
+.input__controle label {
   font-size: 18px;
 }
 .file__result {
@@ -69,7 +80,7 @@
   margin: 0 0 0 auto;
   cursor: pointer;
 }
-.main__box .input__controle select {
+.input__controle select {
   background-color: #FFF;
   padding: 10px 12px;
   border: none;
@@ -83,4 +94,55 @@
   border-radius: 4px;
   padding: 10px 20px;
   font-size: 24px;
+}
+.checkbox__inputs__group .checkbox label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  text-align: center; 
+  cursor: pointer;
+  white-space: pre;
+  margin-bottom: 10px;
+}
+.checkbox__inputs__group .checkbox img {
+  width: 40px;
+  margin-bottom: 8px;
+  display: block;
+}
+.checkbox__inputs__group .checkbox input {
+  cursor: pointer;
+}
+.checkbox__inputs__group input[type='checkbox'] {
+  background-color: #FFF;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+.checkbox__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  font-size: 32px;
+  background-color: #003AAB;
+  color: #FFF;
+  padding: 14px;
+  text-align: center;
+  border-radius: 4px;
+}
+.checkbox__title > div {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.checkbox__title > div label,
+.checkbox__title > div input {
+  cursor: pointer;
+}
+.checkbox__title > div input {
+  width: 20px;
+  height: 20px;
+  border: none;
+  outline: none;
 }
