@@ -1,0 +1,4 @@
+.main__form.video .main__box:nth-of-type(2) .input__group,
+.main__form.video .main__box:nth-of-type(1) .input__group {
+  display: block;
+}
